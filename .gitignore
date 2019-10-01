@@ -1,0 +1,9 @@
+# go
+/go/bin
+/go/pkg
+
+# goreleaser
+/dist
+
+# runtime
+/.env
