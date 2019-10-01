@@ -34,3 +34,7 @@ changelog:
     exclude:
     - '^docs:'
     - '^test:'
+release:
+  github:
+    owner: trevorfsmith
+    name: brontosaurus-ponderosa
