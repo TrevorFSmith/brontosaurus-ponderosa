@@ -1,15 +1,22 @@
 # This is an example goreleaser.yaml file with some sane defaults.
 # Make sure to check the documentation at http://goreleaser.com
-before:
-  hooks:
+#before:
+  #hooks:
     # you may remove this if you don't use vgo
     # - go mod tidy
     # you may remove this if you don't need go generate
     # - go generate ./...
 builds:
-- env:
-  - CGO_ENABLED=0
-  main: ./go/src/bp/main.go
+  - env:
+    - CGO_ENABLED=0
+    id: "brontosaurus-ponderosa"
+    binary: "brontosaurus-ponderosa"
+    main: ./go/src/bp/main.go
+  - env:
+    - CGO_ENABLED=0
+    id: "ponderosa-brontosaurus"
+    binary: "ponderosa-brontosaurus"
+    main: ./go/src/pb/main.go
 archives:
 - replacements:
     darwin: Darwin
