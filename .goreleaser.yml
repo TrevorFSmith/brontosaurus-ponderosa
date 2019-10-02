@@ -6,24 +6,38 @@
     # - go mod tidy
     # you may remove this if you don't need go generate
     # - go generate ./...
+before:
+  hooks:
+  - make npm-install
+  - make fe
 builds:
-  - env:
-    - CGO_ENABLED=0
+  -
+    env:
+      - CGO_ENABLED=0
     id: "brontosaurus-ponderosa"
     binary: "brontosaurus-ponderosa"
     main: ./go/src/bp/main.go
-  - env:
+  -
+    env:
     - CGO_ENABLED=0
     id: "ponderosa-brontosaurus"
     binary: "ponderosa-brontosaurus"
     main: ./go/src/pb/main.go
+
 archives:
-- replacements:
-    darwin: Darwin
-    linux: Linux
-    windows: Windows
-    386: i386
-    amd64: x86_64
+  -
+    replacements:
+      darwin: Darwin
+      linux: Linux
+      windows: Windows
+      386: i386
+      amd64: x86_64
+    files:
+    - fe/dist/**/*
+    builds:
+    - "brontosaurus-ponderosa"
+    - "ponderosa-brontosaurus" 
+
 checksum:
   name_template: 'checksums.txt'
 snapshot:
