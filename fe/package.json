@@ -1,6 +1,6 @@
 {
   "name": "brontosaurus-ponderosa",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": true,
   "description": "This package.json is only for building, not publishing. See publish-package.json.",
   "main": "",
