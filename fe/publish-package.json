@@ -19,7 +19,7 @@
   "homepage": "https://github.com/TrevorFSmith/brontosaurus-ponderosa#readme",
   "main": "index.js",
   "scripts": {
-    "postinstall": "go-npm install && mv ./bin/* ./node_modules/.bin/",
+    "postinstall": "go-npm install && mv ./bin/* ../.bin/",
     "preuninstall": "go-npm uninstall"
   },
   "goBinary": {
