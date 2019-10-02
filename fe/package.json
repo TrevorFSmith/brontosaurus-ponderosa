@@ -1,0 +1,30 @@
+{
+  "name": "brontosaurus-ponderosa",
+  "version": "0.1.0",
+  "description": "A test for goreleaser and go-npm",
+  "main": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trevorfsmith/brontosaurus-ponderosa.git"
+  },
+  "keywords": [
+    "javascript",
+    "demo"
+  ],
+  "author": "Trevor F. Smith <trevor@trevor.smith.name>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/trevorfsmith/brontosaurus-ponderosa/issues"
+  },
+  "homepage": "https://github.com/trevorfsmith/brontosaurus-ponderosa#readme",
+  "scripts": {
+    "build": "rollup -c rollup.conf.js"
+  },
+  "devDependencies": {
+    "rollup": "^1.21.2",
+    "rollup-plugin-cleanup": "^3.0.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.1.0"
+  }
+}

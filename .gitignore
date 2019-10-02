@@ -2,6 +2,10 @@
 /go/bin
 /go/pkg
 
+# front end
+/fe/node_modules
+/fe/dist
+
 # goreleaser
 /dist
 
