@@ -4,7 +4,7 @@
 
 # front end
 /fe/node_modules
-/fe/dist
+/package
 
 # goreleaser
 /dist

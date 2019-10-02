@@ -1,0 +1,32 @@
+{
+  "name": "brontosaurus-ponderosa",
+  "version": "0.1.3",
+  "description": "A small example of using goreleaser and go-npm",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TrevorFSmith/brontosaurus-ponderosa.git"
+  },
+  "keywords": [
+    "javascript",
+    "golang",
+    "example"
+  ],
+  "author": "Trevor F. Smith <subs@trevors.smith.name>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TrevorFSmith/brontosaurus-ponderosa/issues"
+  },
+  "homepage": "https://github.com/TrevorFSmith/brontosaurus-ponderosa#readme",
+  "main": "index.js",
+  "scripts": {},
+  "postinstall": "go-npm install",
+  "preuninstall": "go-npm uninstall",
+  "goBinary": {
+    "name": "command-name",
+    "path": "./bin",
+    "url": "https://github.com/trevorfsmith/brontosaurus-ponderosa/releases/download/v{{version}}/brontosaurus-ponderosa_{{version}}_{{platform}}_{{arch}}.tar.gz"
+  },
+  "dependencies": {
+    "go-npm": "^0.1.9"
+  }
+}

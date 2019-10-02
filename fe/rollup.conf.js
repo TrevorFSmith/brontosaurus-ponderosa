@@ -7,7 +7,7 @@ const production = !process.env.ROLLUP_WATCH;
 export default {
   input: './src/bp.js',
   output: {
-    file: './dist/bp.js',
+    file: '../package/index.js',
     format: 'es'
   },
   plugins: [
