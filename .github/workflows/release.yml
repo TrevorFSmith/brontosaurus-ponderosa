@@ -22,4 +22,12 @@ jobs:
           args: release
         env:
           GITHUB_TOKEN: ${{ secrets.ReleaseToken }}
+          NPM_AUTH_TOKEN: ${{ secrets.NpmAuthToken }}
+      -
+        name: NPM Publish
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.NpmAuthToken }}
+        run: |
+          cd package
+          npm publish
 
