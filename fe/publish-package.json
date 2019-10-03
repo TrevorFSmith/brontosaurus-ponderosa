@@ -1,6 +1,6 @@
 {
   "name": "brontosaurus-ponderosa",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "A small example of using goreleaser and go-npm",
   "repository": {
     "type": "git",
@@ -19,7 +19,7 @@
   "homepage": "https://github.com/TrevorFSmith/brontosaurus-ponderosa#readme",
   "main": "index.js",
   "scripts": {
-    "postinstall": "go-npm install && mv ./tmp/* ./node_modules/.bin/",
+    "postinstall": "go-npm install && mv ./tmp/* ../node_modules/.bin/",
     "preuninstall": "go-npm uninstall"
   },
   "goBinary": {
