@@ -6,17 +6,17 @@ on:
       - 'v*.*.*'
 
 jobs:
-  goreleaser:
+  build-and-run:
     runs-on: ubuntu-latest
     steps:
       -
         name: Checkout
         uses: actions/checkout@master
       -
-        name: Set up golang
+        name: Set up go
         uses: actions/setup-go@master
       -
-        name: Run GoReleaser
+        name: Build and release
         uses: goreleaser/goreleaser-action@master
         with:
           version: latest
