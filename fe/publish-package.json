@@ -1,6 +1,6 @@
 {
   "name": "brontosaurus-ponderosa",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "A small example of using goreleaser and go-npm",
   "repository": {
     "type": "git",
