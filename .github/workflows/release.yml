@@ -22,12 +22,12 @@ jobs:
           args: release
         env:
           GITHUB_TOKEN: ${{ secrets.ReleaseToken }}
-          NPM_AUTH_TOKEN: ${{ secrets.NpmAuthToken }}
       -
         name: NPM Publish
-        env:
-          NPM_AUTH_TOKEN: ${{ secrets.NpmAuthToken }}
         run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NpmAuthToken }}" > ~/.npmrc
+          git config --global user.email "trevor@trevor.smith.name"
+          git config --global user.name "trevorfsmith"
           cd package
           npm publish
 
