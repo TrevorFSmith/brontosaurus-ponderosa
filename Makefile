@@ -19,6 +19,7 @@ make npm-install:
 fe:
 	cd fe && npm run build
 	cd .. && cp $(FE_PATH)/publish-package.json $(FE_DIST)/package.json 
+	cp $(FE_PATH)/PUBLISH_README.md $(FE_DIST)/README.md
 
 clean:
 	rm -rf $(GODIST)/*
