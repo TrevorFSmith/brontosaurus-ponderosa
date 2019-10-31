@@ -23,7 +23,6 @@ jobs:
           args: release
         env:
           GITHUB_TOKEN: ${{ secrets.ReleaseToken }}
-          GOPATH: ${{ env.HOME }}/brontosaurus-ponderosa/go
       -
         name: Publish to npm
         run: |
