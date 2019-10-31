@@ -14,15 +14,21 @@ builds:
   -
     env:
     - CGO_ENABLED=0
+    - GOPATH=/home/runner/work/brontosaurus-ponderosa/brontosaurus-ponderosa/go
     id: "brontosaurus-ponderosa"
     binary: "brontosaurus-ponderosa"
     main: ./go/src/bp/main.go
+    hooks:
+      post: make bintarget=dist/brontosaurus-ponderosa_darwin_amd64/brontosaurus-ponderosa sign
   -
     env:
     - CGO_ENABLED=0
+    - GOPATH=/home/runner/work/brontosaurus-ponderosa/brontosaurus-ponderosa/go
     id: "ponderosa-brontosaurus"
     binary: "ponderosa-brontosaurus"
     main: ./go/src/pb/main.go
+    hooks:
+      post: make bintarget=dist/ponderosa-brontosaurus_darwin_amd64/ponderosa-brontosaurus sign
 
 archives:
   -
