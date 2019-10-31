@@ -23,6 +23,7 @@ jobs:
           args: release
         env:
           GITHUB_TOKEN: ${{ secrets.ReleaseToken }}
+          GOPATH: $PWD/go
       -
         name: Publish to npm
         run: |
