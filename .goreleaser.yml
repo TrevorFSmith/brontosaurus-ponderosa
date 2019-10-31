@@ -18,7 +18,7 @@ builds:
     binary: "brontosaurus-ponderosa"
     main: ./go/src/bp/main.go
     hooks:
-    - post: make bintarget=brontosaurus-ponderosa sign
+      post: make bintarget=brontosaurus-ponderosa sign
   -
     env:
     - CGO_ENABLED=0
@@ -26,7 +26,6 @@ builds:
     binary: "ponderosa-brontosaurus"
     main: ./go/src/pb/main.go
     hooks:
-      pre:
       post: make bintarget=ponderosa-brontosaurus sign
 
 archives:
