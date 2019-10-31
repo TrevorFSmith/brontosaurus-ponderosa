@@ -26,7 +26,7 @@ builds:
     binary: "ponderosa-brontosaurus"
     main: ./go/src/pb/main.go
     hooks:
-    - post: make bintarget=ponderosa-brontosaurus sign
+      post: make bintarget=ponderosa-brontosaurus sign
 
 archives:
   -
