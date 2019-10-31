@@ -8,7 +8,7 @@ export GODIST		:= $(BUILD_HOME)/dist
 export ARCH			:= $(shell uname)
 
 .PHONY: all tools clean fe npm-install
-all: tools sign npm-install fe
+all: tools npm-install fe
 
 tools:
 	go build -o $(GOPATH)/bin/brontosaurus-ponderosa $(GOSRC)/bp/main.go
@@ -16,8 +16,7 @@ tools:
 
 sign:
 ifeq ($(ARCH),Darwin)
-	codesign --force --deep --sign - $(GOPATH)/bin/brontosaurus-ponderosa
-	codesign --force --deep --sign - $(GOPATH)/bin/ponderosa-brontosaurus
+	codesign --force --deep --sign - $(GOPATH)/bin/$(bintarget)
 endif
 
 npm-install:

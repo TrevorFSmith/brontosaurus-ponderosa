@@ -10,9 +10,6 @@ before:
   hooks:
   - make npm-install
   - make fe
-after:
-  hooks:
-  - make sign
 builds:
   -
     env:
@@ -20,12 +17,16 @@ builds:
     id: "brontosaurus-ponderosa"
     binary: "brontosaurus-ponderosa"
     main: ./go/src/bp/main.go
+    hooks:
+    - post: make bintarget=brontosaurus-ponderosa sign
   -
     env:
     - CGO_ENABLED=0
     id: "ponderosa-brontosaurus"
     binary: "ponderosa-brontosaurus"
     main: ./go/src/pb/main.go
+    hooks:
+    - post: make bintarget=ponderosa-brontosaurus sign
 
 archives:
   -
