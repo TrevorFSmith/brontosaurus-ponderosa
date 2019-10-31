@@ -5,15 +5,22 @@ export GOPATH		:= $(BUILD_HOME)/go
 export GOSRC		:= $(GOPATH)/src
 export GOPKG		:= $(GOPATH)/pkg
 export GODIST		:= $(BUILD_HOME)/dist
+export ARCH			:= $(shell uname)
 
 .PHONY: all tools clean fe npm-install
-all: tools npm-install fe
+all: tools sign npm-install fe
 
 tools:
 	go build -o $(GOPATH)/bin/brontosaurus-ponderosa $(GOSRC)/bp/main.go
 	go build -o $(GOPATH)/bin/ponderosa-brontosaurus $(GOSRC)/pb/main.go
 
-make npm-install:
+sign:
+ifeq ($(ARCH),Darwin)
+	codesign --force --deep --sign - $(GOPATH)/bin/brontosaurus-ponderosa
+	codesign --force --deep --sign - $(GOPATH)/bin/ponderosa-brontosaurus
+endif
+
+npm-install:
 	cd fe && npm install
 
 fe:
