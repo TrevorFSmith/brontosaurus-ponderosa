@@ -16,7 +16,7 @@ tools:
 
 sign:
 ifeq ($(ARCH),Darwin)
-	codesign --force --deep --sign - $(GOPATH)/bin/$(bintarget)
+	codesign --force --deep --sign - $(bintarget)
 endif
 
 npm-install:
