@@ -18,7 +18,7 @@ builds:
     binary: "brontosaurus-ponderosa"
     main: ./go/src/bp/main.go
     hooks:
-      post: du -a #make bintarget=dist/brontosaurus-ponderosa_darwin_amd64/brontosaurus-ponderosa sign
+      post: du -a && alksjdas #make bintarget=dist/brontosaurus-ponderosa_darwin_amd64/brontosaurus-ponderosa sign
   -
     env:
     - CGO_ENABLED=0
