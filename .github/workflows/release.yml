@@ -16,15 +16,19 @@ jobs:
         name: Set up go
         uses: actions/setup-go@master
       -
+        name: Set ENVs
+        run: |
+          echo "##[set-env name=GIT_TAG;]echo $GITHUB_REF | cut -d"/" -f3
+          echo "##[set-env name=GOPATH;]$(dirname $GITHUB_WORKSPACE)/brontosaurus-ponderosa/go"
+          echo "##[add-path]$(dirname $GITHUB_WORKSPACE)/brontosaurus-ponderosa/go/bin"
+        shell: bash
+      -
         name: Show ENVs
         run: |
           echo "GITHUB_REF: $GITHUB_REF"
           echo "GITHUB_EVENT_NAME: $GITHUB_EVENT_NAME"
-      -
-        name: Set GOPATH
-        run: |
-          echo "##[set-env name=GOPATH;]$(dirname $GITHUB_WORKSPACE)/brontosaurus-ponderosa/go"
-          echo "##[add-path]$(dirname $GITHUB_WORKSPACE)/brontosaurus-ponderosa/go/bin"
+          echo "GIT_TAG: $GIT_TAG"
+          echo "GOPATH: $GOPATH"
         shell: bash
       -
         name: Build and release
