@@ -18,6 +18,8 @@ jobs:
       -
         name: Set GOPATH
         run: |
+          echo "Workspace dir: $(dirname $GITHUB_WORKSPACE)"
+          ls "$(dirname $GITHUB_WORKSPACE)"
           echo "##[set-env name=GOPATH;]$(dirname $GITHUB_WORKSPACE)/go"
           echo "##[add-path]$(dirname $GITHUB_WORKSPACE)go/bin"
         shell: bash
