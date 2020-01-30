@@ -18,10 +18,10 @@ jobs:
       -
         name: Set GOPATH
         run: |
-          echo "Workspace dir: $(dirname $GITHUB_WORKSPACE)"
-          ls "$(dirname $GITHUB_WORKSPACE)"
-          echo "##[set-env name=GOPATH;]$(dirname $GITHUB_WORKSPACE)/go"
-          echo "##[add-path]$(dirname $GITHUB_WORKSPACE)go/bin"
+          echo "##[set-env name=GOPATH;]$(dirname $GITHUB_WORKSPACE)/brontosaurus-ponderosa/go"
+          echo "##[add-path]$(dirname $GITHUB_WORKSPACE)/brontosaurus-ponderosa/go/bin"
+          echo "GOPATH 1: ${GOPATH}"
+          echo "GOPATH 2: $GOPATH"
         shell: bash
       -
         name: Build and release
