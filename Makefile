@@ -7,6 +7,7 @@ export GOPKG		:= $(GOPATH)/pkg
 export GOBIN		:= $(GOPATH)/bin
 export GODIST		:= $(BUILD_HOME)/dist
 export ARCH			:= $(shell uname)
+export RPM_IMAGE	:= "docker.pkg.github.com/transmutable/rpm-build-container/rpm-build-container:v1.0.0"
 
 .PHONY: all tools clean fe npm-install install uninstall rpm
 all: tools npm-install fe
@@ -16,7 +17,7 @@ tools:
 	go build -o $(GOPATH)/bin/ponderosa-brontosaurus $(GOSRC)/pb/main.go
 
 rpm:
-	docker run -v "$(BUILD_HOME):/home/rpmbuild" rpm-build:v0 /run.sh rpm.spec
+	docker run -v "$(BUILD_HOME):/home/rpmbuild" $(RPM_IMAGE) /run.sh rpm.spec
 
 test:
 	echo 'No tests, yet'
