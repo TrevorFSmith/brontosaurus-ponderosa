@@ -5,7 +5,7 @@ ADD ./Makefile .
 RUN apk add --update make
 RUN set -ex && \
 	make tools && \
-	mv ./go/bin/brontosaurus-ponderosa /usr/bin/
+	mv ./go/bin/*ponderosa* /usr/bin/
 
 FROM alpine
 RUN apk add --update ca-certificates

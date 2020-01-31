@@ -6,6 +6,11 @@
 /fe/node_modules
 /package
 
+# rpm
+/rpmbuild
+/.cache
+/.rpmmacros
+
 # goreleaser
 /dist
 
