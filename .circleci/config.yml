@@ -3,6 +3,14 @@
 # Check https://circleci.com/docs/2.0/language-go/ for more details
 version: 2
 jobs:
+  hello-world:
+    docker:
+      - image: alpine:latest
+    steps:
+      - run:
+        name: Howdy
+        command: |
+          echo 'Hello world'
   build:
     docker:
       # specify the version
@@ -24,3 +32,17 @@ jobs:
       # specify any bash command here prefixed with `run: `
       - run: make
       - run: make test
+
+workflows:
+  version: 2
+  trigger-test:
+    triggers:
+      - schedule:
+        cron: "0,5,10,15,20,25,30,35,40,45,50,55 * * * *"
+        filters:
+          branches:
+            only:
+              - circleci-project-setup
+    jobs:
+      - hello-world
+
