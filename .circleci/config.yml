@@ -8,9 +8,9 @@ jobs:
       - image: alpine:latest
     steps:
       - run:
-        name: Howdy
-        command: |
-          echo 'Hello world'
+          name: Howdy
+          command: |
+            echo 'Hello world'
   build:
     docker:
       # specify the version
