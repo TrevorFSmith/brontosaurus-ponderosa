@@ -37,11 +37,13 @@ workflows:
   version: 2
   scheduled-workflow:
     triggers:
-      - schedule:
-        cron: "0 1 * * *"
+      schedule:
+        cron:
+          - "0 1 * * *"
         filters:
           branches:
-            only: circleci-project-setup
+            only: 
+              - circleci-project-setup
     jobs:
       - hello-world
 
